@@ -1,0 +1,29 @@
+<div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <div class="numForm">
+        <div class="form-group py-2 fs-4">
+            <label for="num">Szám</label>
+            <input type="text" class="form-control" id="num" [(ngModel)]="num">
+        </div>
+
+        <div class="py-2">
+            <button (click)="getNum()" type="button" class="btn btn-info w-100 fs-5">Lekér</button>
+        </div>
+
+        @if (displayTriplaNum) {
+
+        <div class="form-group fs-4">
+            <label for="triple">Triplázás</label>
+            <input class="form-control" type="text" id="triple" [(ngModel)]="triple">
+        </div>
+
+        }
+    </div>
+
+    <div class="list fs-4">
+        <ul>
+            @for(num of resultList; track num) {
+            <li>{{ num }}</li>
+            }
+        </ul>
+    </div>
+</div>
